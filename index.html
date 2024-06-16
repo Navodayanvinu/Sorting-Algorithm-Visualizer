@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav
+class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark"
+data-bs-theme="dark"
+>
+<div class="container-fluid">
+  <img style="width: 40px" src="Logo.png" alt="Logo" />
+  <a class="navbar-brand" href="#">Sorting Algorithms Visualizer</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div class="mx-4 logoes">
+        <ul class="navbar-nav ml-auto d-flex justify-content-end">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://github.com/Navodayanvinu"
+              target="_blank"
+            >
+              <img
+                class="contact-logo"
+                src="GithubLogo.png"
+                alt="GitHub Logo"
+              />
+              GitHub
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.linkedin.com/in/vinod-malviya-b59614225/"
+              target="_blank"
+            >
+              <img
+                class="contact-logo"
+                src="/img/linkedinLogo.svg"
+                alt="LinkedIn Logo"
+                style="filter: invert(100%)"
+              />
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </ul>
+  </div>
+  <div class="mx-2 logoend">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="https://github.com/Navodayanvinu"
+          target="_blank"
+        >
+          <img
+            class="contact-logo"
+            src="GithubLogo.png"
+            alt="GitHub Logo"
+          />
+          GitHub
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="https://www.linkedin.com/in/vinod-malviya-b59614225/"
+          target="_blank"
+        >
+          <img
+            class="contact-logo"
+            src="linkedinLogo.svg"
+            alt="LinkedIn Logo"
+            style="filter: invert(100%)"
+          />
+          LinkedIn
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+    <header class="p-3 bg-dark text-white">
+
+        <div class="d-flex flex-row align-items-center justify-content-lg-between mediagenerate">
+
+            <div class="text-end ">
+                <button type="button" class="btn btn-outline-light me-2 btn-lg gnr" id="a_generate">Generate New
+                    Array</button>
+            </div>
+
+
+
+            <div class="mt-0">
+                <label for="a_size" class="form-label border border-info border-4 rounded p-2">Size of
+                    Array</label>
+                <input type="range" class="form-range" min="10" max="19" value="15" step="1" id="a_size">
+
+                <label for="a_speed" class="form-label border border-info border-4 rounded p-2">Speed
+                    of Algorithm</label>
+                <input type="range" class="form-range" min="1" max="5" step="1" id="a_speed">
+            </div>
+
+
+
+            <div class="dropdown">
+                <button class="btn btn-danger dropdown-toggle btn-lg" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Algorithms
+                </button>
+                <ul class="dropdown-menu bg-success algos" aria-labelledby="dropdownMenuButton1">
+                    <li><button class="dropdown-item font-monospace fw-bold btn btn-outline-danger">Bubble Sort</button>
+                    </li>
+                    <li><button class="dropdown-item font-monospace fw-bold btn btn-outline-danger">Selection Sort</button></li>
+                    <li><button class="dropdown-item font-monospace fw-bold btn btn-outline-danger">Insertion Sort</button></li>
+                    <li><button class="dropdown-item font-monospace fw-bold btn btn-outline-danger">Merge Sort</button>
+                    </li>
+                    <li><button class="dropdown-item font-monospace fw-bold btn btn-outline-danger">Quick Sort</button>
+                    </li>
+                    <li><button class="dropdown-item font-monospace fw-bold btn btn-outline-danger">Heap Sort</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="d-flex flex-row justify-content-lg-between mt-2 mediagenerate">
+        <section>
+            <div id="array_container">
+
+                <div class="tube shrink">
+                    <div class="tube__top"></div>
+                    <div class="tube__contents"></div>
+                    <div class="tube__outer-glass"></div>
+                </div>
+
+                <div class="tube shrink">
+                    <div class="tube__top"></div>
+                    <div class="tube__contents"></div>
+                    <div class="tube__outer-glass"></div>
+                </div>
+            </div>
+
+        </section>
+        <div class="tc">TIME COMPLEXITY
+
+            <div class="timing" id="best">Best Case :</div>
+            <div class="timing" id="avg">Average Case :</div>
+            <div class="timing" id="worst">Worst Case :</div>
+
+
+            <div>SPACE COMPLEXITY</div>
+            <div class="timing" id="space"></div>
+
+            <div id="algo-name"></div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <footer>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <script src="js files/main.js"></script>
+    <script src="js files/bubble.js"></script>
+    <script src="js files/selection.js"></script>
+    <script src="js files/insertion.js"></script>
+    <script src="js files/merge.js"></script>
+    <script src="js files/quick.js"></script>
+    <script src="js files/heap.js"></script>
+</body>
+
+</html>
